@@ -15,7 +15,7 @@ function updateBalance() {
 }
 
 async function loadBalance() {
-    const res = await fetch("http://localhost:3000/api/balance", {
+    const res = await fetch("https://fedoranekdot-github-io.onrender.com/api/balance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tg_id })
@@ -26,7 +26,7 @@ async function loadBalance() {
 }
 
 clickBtn.addEventListener("click", async () => {
-    const res = await fetch("http://localhost:3000/api/click", {
+    const res = await fetch("https://fedoranekdot-github-io.onrender.com/api/click", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tg_id })
@@ -40,7 +40,7 @@ transferBtn.addEventListener("click", () => {
     const to_id = prompt("Введите ID пользователя");
     const amount = prompt("Введите сумму");
 
-    fetch("http://localhost:3000/api/transfer", {
+    fetch("https://fedoranekdot-github-io.onrender.com/api/transfer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ from_id: tg_id, to_id, amount: Number(amount) })
@@ -58,4 +58,5 @@ infoBtn.addEventListener("click", () => {
 });
 
 loadBalance();
+
 
