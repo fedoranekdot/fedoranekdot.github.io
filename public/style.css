@@ -1,12 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-    background: #111;
+    background: url("bg.png");
+    background-size: cover;       /* растягивает */
+    background-position: center;  /* центрирует */
+    background-repeat: no-repeat; /* не повторяет */
     color: #fff;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
 }
+
 
 .container {
     width: 100%;
@@ -45,14 +49,18 @@ body {
 .click-btn {
     width: 220px;
     height: 220px;
-    border-radius: 50%;
     border: none;
-    background: radial-gradient(circle, #ffcc00, #ff9900);
-    box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
+    border-radius: 50%;
+    background-image: url("circle.png");
+    background-size: cover;      /* картинка растягивается */
+    background-position: center; /* центрируется */
+    background-repeat: no-repeat;
     cursor: pointer;
     transition: transform 0.1s;
 }
 
+
 .click-btn:active {
     transform: scale(0.92);
 }
+
