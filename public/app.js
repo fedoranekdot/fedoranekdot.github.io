@@ -9,6 +9,8 @@ const balanceEl = document.getElementById("balance");
 const clickBtn = document.getElementById("clickBtn");
 const transferBtn = document.getElementById("transferBtn");
 const infoBtn = document.getElementById("infoBtn");
+const copyIdBtn = document.getElementById("copyIdBtn");
+
 
 function updateBalance() {
     balanceEl.textContent = "Баланс: " + balance;
@@ -35,6 +37,17 @@ clickBtn.addEventListener("click", async () => {
     balance = data.balance;
     updateBalance();
 });
+copyIdBtn.addEventListener("click", () => {
+    const tg_id = tg.initDataUnsafe?.user?.id || "unknown";
+
+    navigator.clipboard.writeText(tg_id.toString())
+        .then(() => {
+            tg.showAlert("ID скопирован: " + tg_id);
+        })
+        .catch(() => {
+            tg.showAlert("Не удалось скопировать ID");
+        });
+});
 
 transferBtn.addEventListener("click", () => {
     const to_id = prompt("Введите ID пользователя");
@@ -54,9 +67,10 @@ transferBtn.addEventListener("click", () => {
 });
 
 infoBtn.addEventListener("click", () => {
-    alert("Это простой кликер‑миниапп. Версия 1.0");
+    alert("СУКА это приложение ебать для криптанов. мать ебал каждого");
 });
 
 loadBalance();
+
 
 
